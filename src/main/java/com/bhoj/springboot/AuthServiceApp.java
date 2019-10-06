@@ -1,17 +1,23 @@
 package com.bhoj.springboot;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
 /**
+ * AuthServiceApp class
+ * 
  * @author Bhoj Sao
  *
  */
+@EnableEurekaClient
+@EntityScan( basePackages = {"com.bhoj.springboot.domain"} )
+@SpringBootApplication(scanBasePackages = { "com.bhoj.springboot" })
 public class AuthServiceApp {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		SpringApplication.run(AuthServiceApp.class, args);
 	}
 
 }
