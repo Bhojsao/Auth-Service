@@ -1,10 +1,12 @@
 package com.bhoj.springboot.dto;
 
+import lombok.Builder;
+
 /**
  * @author Bhoj Sao
  *
  */
-
+@Builder
 public class LoginDTO {
 	
 	private String userName;

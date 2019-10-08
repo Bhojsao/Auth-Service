@@ -12,7 +12,6 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  *
  */
 @EnableEurekaClient
-@EntityScan( basePackages = {"com.bhoj.springboot.domain"} )
 @SpringBootApplication(scanBasePackages = { "com.bhoj.springboot" })
 public class AuthServiceApp {
 

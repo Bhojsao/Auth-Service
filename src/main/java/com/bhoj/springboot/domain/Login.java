@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 public class Login {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LOGIN_ID_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = "ID_SEQUENCE", sequenceName = "LOGIN_ID_SEQ")
 	@Column(name = "LOGIN_ID")
 	@JsonProperty

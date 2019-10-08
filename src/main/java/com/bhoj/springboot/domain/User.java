@@ -9,8 +9,8 @@ import javax.persistence.Table;
  * @author Bhoj Sao
  *
  */
-@Table(name = "USER")
-@Entity
+//@Table(name = "USER")
+//@Entity
 public class User {
 
 }
