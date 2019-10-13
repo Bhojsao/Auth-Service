@@ -13,5 +13,13 @@ import com.bhoj.springboot.domain.Login;
  */
 @Repository
 public interface LoginRepository extends JpaRepository<Login, Integer> {
+	
+	/**
+	 * Method to find Login By UserName and Password
+	 * @param userName
+	 * @param password
+	 * @return
+	 */
+	public Login findByUserNameAndPassword(String userName, String password);
 
 }

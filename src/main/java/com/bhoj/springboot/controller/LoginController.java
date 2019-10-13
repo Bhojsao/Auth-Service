@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bhoj.springboot.domain.Login;
@@ -37,13 +37,11 @@ public class LoginController {
 		return new ResponseEntity<Login>(login, HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/authenticate")
-	public ResponseEntity<?> authenticate(@RequestBody LoginDTO loginDto) {
-		
-		//TODO
-
-		Login login = loginRepository.save(new Login(loginDto));
-		return new ResponseEntity<Login>(login, HttpStatus.OK);
+	@GetMapping(value = "/authenticate")
+	public ResponseEntity<?> authenticate(@RequestParam(value ="userName", required=true) String userName,
+			@RequestParam(value ="password", required=true) String password) {
+		Login loginDetail = loginRepository.findByUserNameAndPassword(userName, password);
+		return new ResponseEntity<Login>(loginDetail, HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/getLoginDetails")

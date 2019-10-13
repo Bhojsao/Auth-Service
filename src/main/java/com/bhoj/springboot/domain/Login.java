@@ -11,9 +11,6 @@ import javax.persistence.Table;
 import com.bhoj.springboot.dto.LoginDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 /**
  * Login Entity
  * 
@@ -22,8 +19,6 @@ import lombok.NoArgsConstructor;
  */
 @Table(name = "LOGIN")
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Login {
 
 	@Id
@@ -41,6 +36,9 @@ public class Login {
 	@JsonProperty
 	private String password;
 
+	public Login() {
+	}
+
 	/**
 	 * Customized Constructor
 	 * 
@@ -49,6 +47,31 @@ public class Login {
 	public Login(LoginDTO loginDTO) {
 		this.userName = loginDTO.getUserName();
 		this.password = loginDTO.getPassword();
+	}
+	
+
+	public Integer getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(Integer loginId) {
+		this.loginId = loginId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
